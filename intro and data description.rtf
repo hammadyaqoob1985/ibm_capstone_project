@@ -1,37 +1,42 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2512
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
-}
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\froman\fcharset0 Times-Roman;
+\f3\fmodern\fcharset0 Courier;\f4\fmodern\fcharset0 Courier-Bold;}
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
 {\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;}
-{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
-{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid101\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh16000\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 Seattle Accident Severity Prediction Model.\
 \
-Introduction:\
+
+\f1\b Introduction:
+\f0\b0 \
 \
 According to 
-\f1 \cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SDOT Traffic Management Division 
-\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 in 2019 there were over 9000 accidents in Seattle. 32% of those resulted in injuries. In 2020 there have been 
-\f2\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 2245 accidents. This can be avoided by using collected data to build a machine learning model which can predict whether a route is dangerous based on the current conditions. \
+\f2 \cf2 \expnd0\expndtw0\kerning0
+SDOT Traffic Management Division 
+\f0 \cf0 \kerning1\expnd0\expndtw0 in 2019 there were over 9000 accidents in Seattle. 32% of those resulted in injuries. In 2020 there have been 
+\f3\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+2245 accidents. This can be avoided by using collected data to build a machine learning model which can predict whether a route is dangerous based on the current conditions. \
 \
 The business problem is to analyse the collision dataset and build a model which can predict under the current condition if a route is dangerous or not based on past accidents\
 \
 This model can be useful to various navigation systems and car manufacturers as a built in safety feature which could warn users of potential hazardous routes\
 \
-Data:\
+
+\f4\b Data:
+\f3\b0 \
 \
 The data we will be using is provided by the 
-\f1\fs24 \cb1 SDOT Traffic Management Division and Traffic Records Group. It has various information of accidents that has occurred from 2004 to the present day.\
+\f2\fs24 \cb1 SDOT Traffic Management Division and Traffic Records Group. It has various information of accidents that has occurred from 2004 to the present day.\
 \
 The data has various information regarding incidents including:\
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
 \ls1\ilvl0
-\f2\fs28 \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}Severity of the incident\
+\f3\fs28 \cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8259 	}Severity of the incident\
 {\listtext	\uc0\u8259 	}Location of the incident\
 {\listtext	\uc0\u8259 	}Whether or not the accident was caused due to inattention or if drugs or alcohol was involved or if speeding was involved\
 {\listtext	\uc0\u8259 	}Weather at the time of the incident\
@@ -39,8 +44,39 @@ The data has various information regarding incidents including:\
 {\listtext	\uc0\u8259 	}Light condition at time of incident\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
+\
 By using the Severity of the incident as our target variable and the remainder as features we will build a classification model that will predict how dangerous a certain route is based on the given inputs\
+\
+
+\f4\b Data Acquisition and cleaning:\
+\
+Column removal:
+\f3\b0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 From the data the following information was removed as it was codes assigned to the incident which would not be relevant on the severity of an accident:\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \strokec2 'OBJECTID', 'INCKEY', 'COLDETKEY', 'REPORTNO','STATUS\'92, 'SDOT_COLCODE', 'SDOT_COLDESC\'92, 'SDOTCOLNUM\'92, 'ST_COLCODE', 'ST_COLDESC'\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \outl0\strokewidth0 \
+From the data the following information was removed as duplicate information that we can get from severity code: \
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 'SEVERITYCODE.1', 'SEVERITYDESC'\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \outl0\strokewidth0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 From the data the following information was removed as duplicate information that we can get from Location information: \
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \strokec2 'EXCEPTRSNCODE','EXCEPTRSNDESC'\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \outl0\strokewidth0 From the data the following information was removed as it was information pertaining to the accident after it happened which would not be helpful in predicting whether the route or conditions would cause a severe accident:\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \strokec2 'COLLISIONTYPE','PERSONCOUNT', 'PEDCOUNT', 'PEDCYLCOUNT', 'VEHCOUNT', 'PEDROWNOTGRNT\'92, 'HITPARKEDCAR'\
+\pard\pardeftab720\partightenfactor0
+\ls2\ilvl0\cf2 \outl0\strokewidth0 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf2 \
+\
+\
 }
