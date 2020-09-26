@@ -50,31 +50,36 @@ By using the Severity of the incident as our target variable and the remainder a
 
 \f4\b Data Acquisition and cleaning:\
 \
+Data Cleaning:\
+
+\f3\b0 From the data I have removed any items that do not have any X or Y coordinate as the information will be irrelevant if we do not have the location of the accident\
+\
+I have also removed any rows that have the NEI in the EXCEPTRSNCODE field as this means that there is not enough information
+\f4\b \
+\
 Column removal:
 \f3\b0 \
 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf2 From the data the following information was removed as it was codes assigned to the incident which would not be relevant on the severity of an accident:\
+From the data the following information was removed as it was codes assigned to the incident which would not be relevant on the severity of an accident:\
 \pard\pardeftab720\partightenfactor0
-\cf2 \outl0\strokewidth0 \strokec2 'OBJECTID', 'INCKEY', 'COLDETKEY', 'REPORTNO','STATUS\'92, 'SDOT_COLCODE', 'SDOT_COLDESC\'92, 'SDOTCOLNUM\'92, 'ST_COLCODE', 'ST_COLDESC'\
+\cf2 'OBJECTID', 'INCKEY', 'COLDETKEY', 'REPORTNO','STATUS\'92, 'SDOT_COLCODE', 'SDOT_COLDESC\'92, 'SDOTCOLNUM\'92, 'ST_COLCODE', 'ST_COLDESC'\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf2 \outl0\strokewidth0 \
+\cf2 \
 From the data the following information was removed as duplicate information that we can get from severity code: \
 \pard\pardeftab720\partightenfactor0
-\cf2 \outl0\strokewidth0 'SEVERITYCODE.1', 'SEVERITYDESC'\
+\cf2 'SEVERITYCODE.1', 'SEVERITYDESC'\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf2 \outl0\strokewidth0 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf2 From the data the following information was removed as duplicate information that we can get from Location information: \
+\cf2 \
+From the data the following information was removed as duplicate information that we can get from Location information: \
 \pard\pardeftab720\partightenfactor0
-\cf2 \outl0\strokewidth0 \strokec2 'EXCEPTRSNCODE','EXCEPTRSNDESC'\
+\cf2 'EXCEPTRSNCODE','EXCEPTRSNDESC'\
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf2 \outl0\strokewidth0 From the data the following information was removed as it was information pertaining to the accident after it happened which would not be helpful in predicting whether the route or conditions would cause a severe accident:\
+\cf2 From the data the following information was removed as it was information pertaining to the accident after it happened which would not be helpful in predicting whether the route or conditions would cause a severe accident:\
 \pard\pardeftab720\partightenfactor0
-\cf2 \outl0\strokewidth0 \strokec2 'COLLISIONTYPE','PERSONCOUNT', 'PEDCOUNT', 'PEDCYLCOUNT', 'VEHCOUNT', 'PEDROWNOTGRNT\'92, 'HITPARKEDCAR'\
+\cf2 'COLLISIONTYPE','PERSONCOUNT', 'PEDCOUNT', 'PEDCYLCOUNT', 'VEHCOUNT', 'PEDROWNOTGRNT\'92, 'HITPARKEDCAR'\
 \pard\pardeftab720\partightenfactor0
-\ls2\ilvl0\cf2 \outl0\strokewidth0 \
+\ls2\ilvl0\cf2 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf2 \
 \
